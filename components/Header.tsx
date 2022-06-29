@@ -23,17 +23,27 @@ function Header() {
     }
   }, [])
 
+  const scrollUp = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  }
+
   return (
     <header className={`${isScrolled && 'bg-[#141414]'}`}>
-      <div className="flex items-center space-x-2 md:space-x-10">
+      <div className="flex items-center space-x-2 md:space-x-10 ">
         <img
           src="https://rb.gy/ulxxee"
           width={100}
           height={100}
-          className="cursor-pointer object-contain"
+          className="main-icon cursor-pointer object-contain"
+          onClick={scrollUp}
         />
         <ul className="hidden space-x-4 md:flex">
-          <li className="HeaderLink">Home</li>
+          <li className="HeaderLink" onClick={scrollUp}>
+            Home
+          </li>
           <li className="HeaderLink">TV Shows</li>
           <li className="HeaderLink">Movies</li>
           <li className="HeaderLink">New & Popular</li>
